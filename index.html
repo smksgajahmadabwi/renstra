@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencana Strategis SMK Gajah Mada Banyuwangi 2025-2029</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* == PENGATURAN DASAR & TEMA == */
+        :root {
+            --bg-color: #1a1a1a; /* Latar belakang gelap untuk tampilan web */
+            --page-bg-color: #ffffff; /* Latar belakang halaman konten */
+            --text-color-dark: #333333; /* Warna teks utama untuk konten */
+            --text-color-light: #e0e0e0; /* Warna teks untuk latar belakang gelap */
+            --primary-color: #004d40; /* Dark Teal - Warna utama */
+            --secondary-color: #00897b; /* Medium Teal - Warna sekunder */
+            --accent-color: #ffb300; /* Amber - Warna aksen/highlight */
+            --border-color: #cccccc; /* Warna batas/garis */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color-light);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* == NAVIGASI TAB == */
+        .tab-nav {
+            background-color: #252525;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            max-width: 1200px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tab-button {
+            background-color: #333;
+            color: var(--text-color-light);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tab-button:hover {
+            background-color: #444;
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* == KONTEN HALAMAN (TAMPILAN WEB) == */
+        .content-container {
+            width: 100%;
+            max-width: 1200px; /* Batasi lebar konten */
+        }
+
+        .page {
+            display: none;
+            background-color: var(--page-bg-color);
+            color: var(--text-color-dark);
+            width: 100%; /* Gunakan 100% lebar container */
+            padding: 30px; /* Padding lebih kecil untuk web */
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+            box-sizing: border-box;
+            border-radius: 8px; /* Sudut membulat */
+            margin: 0 auto; /* Tengah di container */
+            min-height: auto; /* Hapus min-height A4 */
+        }
+
+        .page.active {
+            display: block;
+        }
+        
+        /* == KONTEN COVER == */
+        .cover-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh; /* Sesuaikan tinggi cover untuk web */
+            padding: 30px;
+            box-sizing: border-box;
+            background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.8)), url('https://source.unsplash.com/1920x1080/?vocational-school-indonesia,education') no-repeat center center fixed; /* Latar belakang dari cover page utama */
+            background-size: cover;
+            color: var(--text-color-light);
+            border: none; /* Hapus border A4 */
+            border-radius: 8px;
+        }
+        .cover-content img.logo { max-width: 150px; margin-bottom: 40px; border-radius: 50%; background-color: white; padding: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .cover-content h1 { font-size: 2.5em; margin: 0.5em 0; text-shadow: 2px 2px 5px rgba(0,0,0,0.7); }
+        .cover-content h2 { font-size: 1.5em; font-weight: 400; margin-bottom: 3em; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+        .cover-content .author-info { 
+            margin-top: 5cm; /* Jaga margin besar untuk posisi */
+            font-size: 1.2em; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Pusat secara horizontal */
+            gap: 0.1em; /* Menambahkan sedikit spasi antar baris, bisa disesuaikan */
+            line-height: 1.2; /* Mengurangi spasi vertikal antar baris */
+        }
+        .cover-content .author-info p {
+            margin: 0; /* Hapus margin default paragraf */
+            text-align: center; /* Pastikan teks di tengah */
+        }
+
+
+        /* == STYLE UNTUK KONTEN BAB == */
+        .page h1, .page h2, .page h3, .page h4 { color: #111; }
+        .page h1 { font-size: 28px; text-align: center; margin-bottom: 10px; font-weight: 700; }
+        .page h2 { font-size: 22px; text-align: center; margin-bottom: 25px; font-weight: bold; }
+        .page h3 { font-size: 19px; margin-top: 30px; margin-bottom: 15px; color: var(--primary-color); }
+        .page h4 { font-size: 17px; margin-top: 20px; margin-bottom: 10px; color: var(--secondary-color); }
+        .page p { text-align: justify; line-height: 1.7; margin-bottom: 1em; }
+        .page ul, .page ol { padding-left: 25px; text-align: justify; line-height: 1.7; margin-bottom: 1em; }
+        .page li { margin-bottom: 0.6em; }
+        .page table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 15px; }
+        .page table, .page th, .page td { border: 1px solid #ddd; }
+        .page th, .page td { padding: 10px 15px; text-align: left; }
+        .page th { background-color: #f0f0f0; font-weight: bold; color: var(--text-color-dark); }
+        .page caption { caption-side: bottom; font-size: 13px; color: #555; margin-top: 8px; font-style: italic; }
+
+        blockquote {
+            border-left: 5px solid var(--primary-color);
+            padding: 10px 20px;
+            margin: 15px 0;
+            background-color: #f0fdfc;
+            font-style: italic;
+            color: var(--text-color-dark);
+            border-radius: 5px;
+        }
+        
+        .page table tfoot td { font-weight: bold; background-color: #f8f8f8; }
+
+        /* Responsive tables for smaller screens */
+        @media (max-width: 768px) {
+            .tab-nav {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .tab-button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            .page {
+                padding: 20px;
+            }
+            .page h1 { font-size: 24px; }
+            .page h2 { font-size: 18px; }
+            .page h3 { font-size: 17px; }
+            .page h4 { font-size: 15px; }
+            .page p, .page ul, .page ol, .page table { font-size: 14px; }
+
+            .page table, .page thead, .page tbody, .page th, .page td, .page tr {
+                display: block;
+            }
+            .page thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            .page tr {
+                border: 1px solid #ccc;
+                margin-bottom: 1rem;
+                display: flex;
+                flex-direction: column;
+            }
+            .page td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            .page td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+            /* Specific table headers for data tables from KSP */
+            #bab3 table:nth-of-type(1) td:nth-of-type(1):before { content: "No."; }
+            #bab3 table:nth-of-type(1) td:nth-of-type(2):before { content: "Konsentrasi Keahlian"; }
+            #bab3 table:nth-of-type(1) td:nth-of-type(3):before { content: "Kelas X"; }
+            #bab3 table:nth-of-type(1) td:nth-of-type(4):before { content: "Kelas XI"; }
+            #bab3 table:nth-of-type(1) td:nth-of-type(5):before { content: "Kelas XII"; }
+            #bab3 table:nth-of-type(1) td:nth-of-type(6):before { content: "Jumlah"; }
+            
+            #bab3 table:nth-of-type(2) td:nth-of-type(1):before { content: "No."; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(2):before { content: "Tahun Pelajaran"; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(3):before { content: "Kelas X"; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(4):before { content: "Kelas XI"; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(5):before { content: "Kelas XII"; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(6):before { content: "Jumlah"; }
+            #bab3 table:nth-of-type(2) td:nth-of-type(7):before { content: "Ket"; }
+
+            #bab3 table:nth-of-type(3) td:nth-of-type(1):before { content: "No."; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(2):before { content: "Tahun Pelajaran"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(3):before { content: "Peserta"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(4):before { content: "Ikut"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(5):before { content: "Tidak Ikut"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(6):before { content: "Lulus"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(7):before { content: "Tidak Lulus"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(8):before { content: "% Kelulusan"; }
+            #bab3 table:nth-of-type(3) td:nth-of-type(9):before { content: "Ket"; }
+
+            #bab5 table td:nth-of-type(1):before { content: "IKU"; }
+            #bab5 table td:nth-of-type(2):before { content: "Satuan"; }
+            #bab5 table td:nth-of-type(3):before { content: "Target 2025"; }
+            #bab5 table td:nth-of-type(4):before { content: "Target 2026"; }
+            #bab5 table td:nth-of-type(5):before { content: "Target 2027"; }
+            #bab5 table td:nth-of-type(6):before { content: "Target 2028"; }
+            #bab5 table td:nth-of-type(7):before { content: "Target 2029"; }
+        }
+
+        /* == PENGATURAN UNTUK PRINT == */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+            .tab-nav {
+                display: none;
+            }
+            .content-container {
+                max-width: 100%; /* Biarkan konten mengisi penuh halaman saat print */
+            }
+            .page {
+                display: block !important;
+                width: 100%;
+                min-height: auto;
+                margin: 0;
+                padding: 0; /* Padding diatur oleh margin @page */
+                box-shadow: none;
+                border: none;
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+            /* Style khusus untuk cover page saat print */
+            #cover.page {
+                display: flex !important; /* Pastikan cover page tampil sebagai flex untuk centering */
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 297mm; /* Setinggi A4 */
+                background: none; /* Hapus background image */
+                color: var(--text-color-dark); /* Ganti warna teks ke gelap */
+                border: none;
+                box-shadow: none;
+                padding: 2cm;
+            }
+            #cover .cover-content {
+                border: 2px solid var(--text-color-dark); /* Kembalikan border untuk cover */
+                min-height: calc(297mm - 4cm); /* Sesuaikan tinggi area konten cover */
+                background: none;
+                color: var(--text-color-dark);
+            }
+            #cover .cover-content img.logo { box-shadow: none; }
+            #cover .cover-content h1, #cover .cover-content h2, #cover .cover-content p {
+                 text-shadow: none; /* Hapus text shadow */
+                 color: var(--text-color-dark);
+            }
+            
+            @page {
+                size: A4;
+                /* Pengaturan Margin Cetak: Atas, Kanan, Bawah, Kiri */
+                margin: 1.5cm 1.5cm 1.5cm 2.5cm;
+            }
+
+            /* Responsive tables for print - reset to default for better readability */
+            @media print {
+                .page table, .page thead, .page tbody, .page th, .page td, .page tr {
+                    display: table-cell; /* Reset to default table display */
+                }
+                .page thead tr {
+                    position: static;
+                    top: auto;
+                    left: auto;
+                }
+                .page tr {
+                    border: 1px solid #ccc; /* Ensure border for print */
+                    margin-bottom: 0;
+                    display: table-row;
+                }
+                .page td {
+                    border: 1px solid #ccc; /* Ensure border for print */
+                    padding-left: 12px; /* Reset padding */
+                    text-align: left; /* Reset text align */
+                }
+                .page td:before {
+                    display: none; /* Hide pseudo-elements */
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi TAB -->
+    <nav class="tab-nav">
+        <button class="tab-button active" data-target="cover">Cover</button>
+        <button class="tab-button" data-target="bab1">Bab I</button>
+        <button class="tab-button" data-target="bab2">Bab II</button>
+        <button class="tab-button" data-target="bab3">Bab III</button>
+        <button class="tab-button" data-target="bab4">Bab IV</button>
+        <button class="tab-button" data-target="bab5">Bab V</button>
+        <button class="tab-button" data-target="bab6">Bab VI</button>
+    </nav>
+
+    <!-- Kontainer untuk semua halaman -->
+    <main class="content-container">
+
+        <!-- HALAMAN COVER -->
+        <div id="cover" class="page active">
+            <div class="cover-content">
+                <img src="LOGO_GM.png" alt="Logo SMK Gajah Mada Banyuwangi" class="logo">
+                
+                <h1>RENCANA STRATEGIS</h1>
+                <h2>SMK GAJAH MADA BANYUWANGI</h2>
+				<h2>TAHUN 2025 - 2029</h2>
+                
+                <div class="author-info">
+                    <p>Disusun Oleh:</p>
+                    <p><strong>TIM PENGEMBANG PENDIDIKAN SMK GAJAH MADA BANYUWANGI</strong></p>
+                    <p>Jl. Jaksa Agung Suprapto No. 68 Banyuwangi</p>
+                    <p>2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN BAB I -->
+        <div id="bab1" class="page">
+            <h1>BAB I</h1>
+            <h2>PENDAHULUAN</h2>
+
+            <h3>1.1 Latar Belakang</h3>
+            <p>Pendidikan kejuruan memegang peranan krusial dalam menyiapkan sumber daya manusia (SDM) yang terampil dan siap kerja, khususnya dalam menghadapi dinamika Revolusi Industri 4.0 dan Society 5.0. Kabupaten Banyuwangi, dengan potensi ekonomi di sektor pariwisata, pertanian, perikanan, industri kreatif, dan manufaktur, membutuhkan lulusan vokasi yang adaptif dan inovatif.</p>
+            <p>SMK Gajah Mada Banyuwangi, sebagai salah satu institusi pendidikan kejuruan di wilayah ini, memiliki tanggung jawab besar untuk menjawab tantangan tersebut. Berlokasi strategis di tengah kota Banyuwangi, sekolah ini berada di bawah naungan Lembaga Pendidikan Ma'arif NU dan telah ditetapkan sebagai Sekolah Pusat Keunggulan. Dengan dukungan 90% guru bersertifikat pendidik dan kemitraan dengan lebih dari 20 perusahaan lokal, SMK Gajah Mada Banyuwangi berupaya mencetak lulusan berkarakter, terampil, dan siap kerja. Meskipun demikian, persaingan ketat antar SMK di wilayah kota dan latar belakang ekonomi siswa dari daerah pinggiran menjadi tantangan yang harus diatasi.</p>
+            <p>Rencana Strategis (Renstra) ini disusun sebagai panduan jangka menengah (2025-2029) untuk memastikan seluruh upaya dan sumber daya sekolah terarah secara efektif dalam mewujudkan visi menjadi SMK unggulan yang menghasilkan lulusan berkarakter, kompeten, mandiri, dan berdaya saing global. Renstra ini juga menjadi fondasi bagi penyusunan Road Map operasional, di mana setiap pilar strategis akan diterjemahkan ke dalam program dan kegiatan yang lebih detail, terukur, dan memiliki lini masa yang jelas.</p>
+
+            <h3>1.2 Dasar Hukum</h3>
+            <ul>
+                <li>Undang-Undang Republik Indonesia Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional.</li>
+                <li>Peraturan Pemerintah Republik Indonesia Nomor 17 Tahun 2010 tentang Pengelolaan dan Penyelenggaraan Pendidikan sebagaimana telah diubah dengan Peraturan Pemerintah Nomor 66 Tahun 2010.</li>
+                <li>Peraturan Presiden Republik Indonesia Nomor 87 Tahun 2017 tentang Penguatan Pendidikan Karakter.</li>
+                <li>Peraturan Menteri Pendidikan dan Kebudayaan Republik Indonesia Nomor 32 Tahun 2017 tentang Standar Nasional Pendidikan (dan perubahan-perubahannya).</li>
+                <li>Kebijakan Merdeka Belajar dan program SMK Pusat Keunggulan dari Kementerian Pendidikan dan Kebudayaan.</li>
+                <li>Dokumen perencanaan pembangunan daerah Kabupaten Banyuwangi.</li>
+                <li>Statuta dan kebijakan internal SMK Gajah Mada Banyuwangi.</li>
+            </ul>
+
+            <h3>1.3 Sistematika Penulisan</h3>
+            <p>Rencana Strategis SMK Gajah Mada Banyuwangi Tahun 2025-2029 ini terdiri dari enam bab dengan penjelasan sebagai berikut:</p>
+            <ol>
+                <li><strong>Bab I: Pendahuluan</strong> berisi Latar Belakang, Dasar Hukum, dan Sistematika <strong>Penulisan</strong>.</li>
+                <li><strong>Bab II: Visi, Misi, dan Tujuan</strong> menjelaskan arah dan tujuan strategis SMK Gajah Mada Banyuwangi.</li>
+                <li><strong>Bab III: Analisis Situasi</strong> menguraikan kondisi internal dan eksternal, serta isu-isu strategis yang dihadapi.</li>
+                <li><strong>Bab IV: Strategi dan Program</strong> memaparkan pilar-pilar strategi dan program-program utama yang akan dilaksanakan.</li>
+                <li><strong>Bab V: Indikator Kinerja Utama (IKU) dan Target</strong> menyajikan parameter keberhasilan dan target capaian selama periode Renstra.</li>
+                <li><strong>Bab VI: Penutup</strong> berisi Kesimpulan, Harapan, serta Prinsip Keberlanjutan dan Manajemen Risiko.</li>
+            </ol>
+        </div>
+
+        <!-- HALAMAN BAB II -->
+        <div id="bab2" class="page">
+            <h1>BAB II</h1>
+            <h2>VISI, MISI, DAN TUJUAN</h2>
+
+            <h3>2.1 Visi Satuan Pendidikan SMK Gajah Mada Banyuwangi 2029</h3>
+            <blockquote>
+                "Mewujudkan lulusan SMK Gajah Mada Banyuwangi yang unggul, berkarakter kuat, kompeten, mandiri dan berdaya saing global, melalui penguasaan kompetensi profesional yang relevan dengan kebutuhan dunia kerja serta keterampilan abad ke-21 yang inovatif."
+            </blockquote>
+            <p>Visi tersebut dapat dijelaskan sebagai berikut:</p>
+            <ul>
+                <li><strong>Unggul:</strong> Keunggulan diukur melalui standar kinerja yang melampaui rata-rata, seperti keberhasilan dalam kompetisi keterampilan, nilai sertifikasi industri, dan kemampuan menciptakan produk inovatif.</li>
+                <li><strong>Kompeten:</strong> Penguasaan <em>hard skills</em> (keterampilan teknis spesifik) yang relevan dengan kebutuhan industri elektronika, IT, dan otomasi. Kurikulum dan asesmen dirancang berdasarkan standar kompetensi kerja nasional (SKKNI) di bidang Elektronika dan Teknologi Informasi serta standar industri dari mitra.</li>
+                <li><strong>Berkarakter Kuat:</strong> Pengembangan karakter melalui Penguatan Pendidikan Karakter (PPK) yang mengintegrasikan nilai etika, integritas, dan <em>soft skills</em> (kerja sama, kepemimpinan, pemecahan masalah) dalam setiap pembelajaran.</li>
+                <li><strong>Mandiri:</strong> Memiliki keyakinan dan inisiatif untuk memecahkan masalah dan beradaptasi dengan perubahan teknologi tanpa ketergantungan berlebih.</li>
+                <li><strong>Berdaya Saing Global:</strong> Kemampuan lulusan untuk memenuhi standar industri global, yang mencakup penguasaan teknologi terkini seperti IoT, otomasi, pemahaman dokumentasi teknis berbahasa Inggris, dan sertifikasi profesi yang diakui secara luas.</li>
+                <li><strong>Keterampilan Abad ke-21 & Inovatif:</strong> Penerapan 4C (Critical Thinking, Creativity, Collaboration, Communication) untuk menciptakan solusi baru, sejalan dengan metode <em>design thinking</em> dalam pengembangan produk teknologi.</li>
+            </ul>
+
+            <h3>2.2 Misi Pengembangan</h3>
+            <p>Misi ini dirancang sebagai langkah konkret untuk mencapai visi, dengan fokus pada penguatan pembelajaran teknologi, pembentukan karakter, dan relevansi dengan industri 4.0. Misi SMK Gajah Mada Banyuwangi antara lain:</p>
+            <ol>
+                <li><strong>Menyelenggarakan Pembelajaran Berbasis Kurikulum Industri</strong><br>
+                    Menerapkan kurikulum yang telah disinkronkan dengan mitra industri utama, untuk memastikan lulusan memiliki kompetensi yang relevan dan siap kerja di konsentrasi keahlian <strong>Teknik Kendaraan Ringan, Teknik Audio Video, Teknik Sepeda Motor, Teknik Komputer dan Jaringan, Desain Komunikasi Visual, Akuntansi, dan Manajemen Perkantoran</strong>.
+                </li>
+                <li><strong>Membangun Budaya Sekolah yang Kuat dan Positif</strong><br>
+                    Menerapkan program pendidikan karakter untuk membentuk murid yang berakhlak mulia, memiliki etos kerja tinggi, dan sikap mandiri.
+                </li>
+                <li><strong>Mengembangkan Potensi dan Keterampilan Abad ke-21</strong><br>
+                    Mengintegrasikan pembelajaran keterampilan berpikir kritis, kreativitas, kolaborasi, dan komunikasi dalam setiap mata pelajaran melalui metode pengajaran inovatif dan berbasis proyek.
+                </li>
+                <li><strong>Menjalin Kemitraan Strategis dengan Dunia Kerja</strong><br>
+                    Melaksanakan kerja sama yang erat dengan melalui model 8+i untuk program magang, sertifikasi, guru tamu, dan penyerapan lulusan.
+                </li>
+                <li><strong>Mendorong Lingkungan Pembelajaran yang Inklusif dan Inovatif</strong><br>
+                    Menciptakan suasana belajar yang aman dan nyaman yang mendukung kreativitas serta inovasi, sehingga setiap murid dapat berkembang secara optimal.
+                </li>
+            </ol>
+
+            <h3>2.3 Tujuan Strategis</h3>
+            <p>Berdasarkan visi dan misi, tujuan SMK Gajah Mada Banyuwangi yang ingin dicapai dalam jangka waktu 5 tahun ke depan adalah:</p>
+            <ol>
+                <li>Terwujudnya penyelenggaraan pendidikan vokasi yang adaptif, relevan dengan kebutuhan industri, dan berorientasi pada pengembangan keterampilan abad ke-21 di semua konsentrasi keahlian.</li>
+                <li>Tersedianya SDM pendidikan vokasi (guru dan tenaga kependidikan) yang profesional, inovatif, dan memiliki kompetensi standar industri.</li>
+                <li>Tercapainya optimalisasi sarana dan prasarana pembelajaran berbasis teknologi modern yang mendukung praktik industri riil dan Teaching Factory.</li>
+                <li>Terjalinnya kemitraan strategis yang kuat dan saling menguntungkan dengan DUDI, pemerintah, dan masyarakat untuk peningkatan kualitas lulusan dan pengembangan sekolah.</li>
+                <li>Terlaksananya tata kelola sekolah yang transparan, akuntabel, efektif, serta lingkungan belajar yang kondusif dan inspiratif.</li>
+            </ol>
+        </div>
+
+        <!-- HALAMAN BAB III -->
+        <div id="bab3" class="page">
+            <h1>BAB III</h1>
+            <h2>ANALISIS SITUASI</h2>
+
+            <h3>3.1 Kondisi Internal</h3>
+            <h4>3.1.1 Analisis Kekhasan Daerah dan Konteks Sosial</h4>
+            <p>SMK Gajah Mada Banyuwangi merupakan salah satu Sekolah Menengah Kejuruan Swasta yang berlokasi strategis di tengah kota, tepatnya di Jalan Jaksa Agung Suprapto No. 68 Penganjuran Banyuwangi, sehingga mudah diakses oleh masyarakat. Sekolah ini berada di bawah naungan Lembaga Pendidikan Ma'arif NU yang secara konsisten menanamkan nilai-nilai Islam dalam setiap aktivitas pembelajaran dan kegiatan sehari-hari. Dengan dukungan tenaga pendidik yang profesional, di mana 90% guru telah bersertifikat pendidik, SMK Gajah Mada Banyuwangi juga ditetapkan sebagai Sekolah Pusat Keunggulan yang memiliki komitmen untuk mengembangkan lulusan berkarakter, terampil, dan siap kerja.</p>
+            <p>Dalam pelaksanaan pendidikan, sekolah telah menjalin kemitraan dengan lebih dari 20 perusahaan di Banyuwangi untuk mendukung pembelajaran berbasis dunia kerja, program magang, dan peluang rekrutmen lulusan. Peserta didik SMK Gajah Mada Banyuwangi berasal dari wilayah pinggiran dan pedesaan, dengan latar belakang ekonomi keluarga yang tergolong rendah. Kondisi ini menjadi tantangan sekaligus peluang bagi sekolah untuk memberikan layanan pendidikan yang inklusif, berkualitas, dan relevan dengan kebutuhan industri.</p>
+            <p>SMK Gajah Mada Banyuwangi memiliki keunikan dalam pengembangan budaya belajar yang berfokus pada keterampilan industri dan kewirausahaan. Salah satu program unggulan sekolah adalah kemitraan dengan PT. Teaching Factory Solusindo, yang memberikan kesempatan bagi peserta didik untuk terlibat langsung dalam proses produksi perangkat teknologi, seperti scantool dan produk sejenisnya. Kegiatan ini dilaksanakan dalam bentuk pembelajaran berbasis proyek (<em>project-based learning</em>) yang terintegrasi dalam kurikulum sekolah.</p>
+            <p>Komite sekolah di SMK Gajah Mada Banyuwangi berperan sebagai mitra strategis dalam pengambilan keputusan dan pengawasan pelaksanaan kebijakan sekolah, termasuk dalam pengembangan dan evaluasi kurikulum. Partisipasi masyarakat, terutama orang tua peserta didik dan tokoh lingkungan sekitar, berkontribusi dalam penguatan pendidikan karakter dan budaya sekolah. Mitra dunia kerja memiliki peran kunci dalam memastikan kurikulum SMK Gajah Mada Banyuwangi relevan dengan standar kompetensi industri, melalui kerja sama dengan perusahaan seperti PT. Teaching Factory Solusindo, PT Indo Surya Perkasa Gemilang, PT DIPO Internasional Pahala Otomotif, Bengkelku, KPS Artha Insani, Sogeh Bareng, Rino Net, STIKOM Banyuwangi, CV Faris Jaya Teknik, AHASS, CV Garuda Motor, dan lain-lain.</p>
+
+            <h4>3.1.2 Karakteristik Peserta Didik</h4>
+            <p>Peserta didik SMK Gajah Mada Banyuwangi memiliki latar belakang yang beragam. Sebagian besar siswa jurusan teknik, dengan komposisi jumlah siswa laki-laki yang lebih banyak dibandingkan siswi perempuan. Mayoritas berasal dari keluarga dengan kondisi ekonomi rendah, di mana orang tua bekerja sebagai buruh, petani, nelayan, atau pedagang kecil. Secara geografis, mereka datang dari daerah pinggiran kota Banyuwangi seperti Kecamatan Glagah, Kalipuro, Licin, dan wilayah sekitar pusat kota, bahkan ada yang berasal dari luar pulau, seperti Pulau Sapeken. Latar belakang etnis siswa cukup beragam, mencakup suku Jawa, Osing, dan Madura. Siswa dikenal memiliki karakter sopan santun, membiasakan diri mencium tangan guru saat bertemu, serta saling bertegur sapa dengan teman maupun warga sekolah lainnya. Namun, kondisi keluarga tertentu terkadang berdampak pada motivasi, kedisiplinan, dan konsentrasi belajar.</p>
+            <table>
+                <caption>Tabel Data Peserta didik Tahun Pelajaran : 2025 – 2026</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Konsentrasi Keahlian</th>
+                        <th colspan="4">Jumlah Peserta didik Kelas</th>
+                    </tr>
+                    <tr>
+                        <th>X</th>
+                        <th>XI</th>
+                        <th>XII</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Teknik Kendaraan Ringan</td>
+                        <td>29</td>
+                        <td>27</td>
+                        <td>32</td>
+                        <td><strong>88</strong></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Teknik Sepeda Motor</td>
+                        <td>51</td>
+                        <td>35</td>
+                        <td>29</td>
+                        <td><strong>115</strong></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Teknik Audio Video</td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td><strong>20</strong></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Teknik Komputer dan Jaringan</td>
+                        <td>15</td>
+                        <td>25</td>
+                        <td>24</td>
+                        <td><strong>64</strong></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>Manajemen Perkantoran</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td><strong>19</strong></td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>Akuntansi</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td><strong>14</strong></td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>Desain Komunikasi Visual</td>
+                        <td>8</td>
+                        <td>8</td>
+                        <td>7</td>
+                        <td><strong>23</strong></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" style="text-align:center;"><strong>JUMLAH</strong></td>
+                        <td><strong>120</strong></td>
+                        <td><strong>107</strong></td>
+                        <td><strong>116</strong></td>
+                        <td><strong>343</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <table>
+                <caption>Tabel Data Peserta didik dalam 5 tahun terakhir</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Tahun Pelajaran</th>
+                        <th colspan="4">Jumlah Siswa</th>
+                        <th rowspan="2">Ket</th>
+                    </tr>
+                    <tr>
+                        <th>X</th>
+                        <th>XI</th>
+                        <th>XII</th>
+                        <th>Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>2020 – 2021</td>
+                        <td>170</td>
+                        <td>220</td>
+                        <td>191</td>
+                        <td><strong>581</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>2021 – 2022</td>
+                        <td>175</td>
+                        <td>167</td>
+                        <td>211</td>
+                        <td><strong>553</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>2022 – 2023</td>
+                        <td>154</td>
+                        <td>161</td>
+                        <td>155</td>
+                        <td><strong>470</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>2023 – 2024</td>
+                        <td>127</td>
+                        <td>131</td>
+                        <td>152</td>
+                        <td><strong>410</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>2024 – 2025</td>
+                        <td>116</td>
+                        <td>119</td>
+                        <td>122</td>
+                        <td><strong>357</strong></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <caption>Data Kelulusan peserta didik dalam 5 tahun terakhir</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Tahun Pelajaran</th>
+                        <th colspan="6">JUMLAH</th>
+                        <th rowspan="2">Ket</th>
+                    </tr>
+                    <tr>
+                        <th>Peserta</th>
+                        <th>Ikut</th>
+                        <th>Tidak Ikut</th>
+                        <th>Lulus</th>
+                        <th>Tdk. Lulus</th>
+                        <th>% Kelulusan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>2020 – 2021</td>
+                        <td>191</td>
+                        <td>191</td>
+                        <td>0</td>
+                        <td>191</td>
+                        <td>0</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>2021 – 2022</td>
+                        <td>211</td>
+                        <td>209</td>
+                        <td>2</td>
+                        <td>209</td>
+                        <td>0</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>2022 – 2023</td>
+                        <td>155</td>
+                        <td>152</td>
+                        <td>3</td>
+                        <td>152</td>
+                        <td>0</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>2023 – 2024</td>
+                        <td>152</td>
+                        <td>151</td>
+                        <td>1</td>
+                        <td>151</td>
+                        <td>0</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>2024 – 2025</td>
+                        <td>122</td>
+                        <td>121</td>
+                        <td>1</td>
+                        <td>121</td>
+                        <td>0</td>
+                        <td>100%</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3.1.3 Karakteristik Pendidik dan Tenaga Pendidikan</h4>
+            <p>
+                SMK Gajah Mada Banyuwangi memiliki tenaga pendidik yang kompeten dalam bidangnya. SMK Gajah Mada Banyuwangi berkomitmen untuk mencetak lulusan yang siap kerja dan memiliki keterampilan yang relevan dengan dunia industri. Tenaga pendidik adalah para profesional yang tidak hanya menguasai bidang keilmuan, tetapi juga memiliki pengalaman kerja yang luas di industri terkait. Mereka secara aktif menjalin kerjasama dengan dunia usaha dan industri untuk memastikan kurikulum yang diajarkan selalu relevan dengan kebutuhan pasar kerja. Selain itu, para guru juga mendorong siswa untuk mengembangkan soft skills seperti komunikasi, kerja sama tim, dan problem solving melalui berbagai kegiatan praktikum dan proyek nyata. Jumlah tenaga pendidik 34 guru yang terdiri dari 16 guru laki-laki dan 18 guru perempuan. Sebagian besar adalah guru guru professional yang bersertifikat pendidik dari 34 guru tersebut 28 guru sudah memiliki sertifikat pendidik.
+            </p>
+            <p>
+                Selain tenaga pendidik, tenaga kependidikan di SMK Gajah Mada juga tenaga profesional yang berperan aktif dalam menciptakan lingkungan belajar yang kondusif. Mereka selalu siap membantu siswa dan guru dalam berbagai hal, sehingga tercipta suasana yang harmonis dan nyaman. Jumlah tenaga kependidikan sebanyak 11 orang terdiri dari bagian buku induk, surat menyurat, kerumahtanggaan, petugas perpustakaan, petugas administrasi, petugas UPJ, Toolman, satpam dan petugas kebersihan. Pendidikan dari tenaga kependidikan dari sekolah menengah atas hingga Sarjana.
+            </p>
+            <p>
+                Sebagian besar guru telah memiliki kualifikasi akademik minimal S1 sesuai dengan amanat Undang-Undang Guru dan Dosen. Tenaga kependidikan umumnya memiliki latar belakang pendidikan SMA/SMK hingga S1 sesuai bidang tugasnya. Guru telah mengikuti berbagai pelatihan Kurikulum Merdeka, penyusunan ATP, P5, serta asesmen diagnostik. Baik yang dilakukan dengan pelatihan mandiri pada Ruang GTK maupun mengikuti pelatihan online yang diselenggarakan oleh komunitas belajar/praktisi Pendidikan. Guru kejuruan memiliki sertifikat kompetensi industri yang relevan dengan bidangnya. Beberapa guru telah tersertifikasi sebagai Asesor Kompetensi melalui LSP (Lembaga Sertifikasi Profesi). Guru BK memiliki kompetensi dalam layanan konseling individual maupun kelompok.
+            </p>
+            <p>
+                Sebagian besar guru mengajar sesuai dengan latar belakang pendidikan dan bidang sertifikasinya, sehingga mendukung kualitas pembelajaran. Guru produktif ditempatkan sesuai keahlian, misalnya guru bidang Teknik Otomotif berasal dari lulusan teknik mesin/otomotif. Terdapat beberapa guru yang masih mengajar lintas bidang karena keterbatasan formasi, namun tetap mendapat pendampingan. Guru aktif mengikuti program MGMP, workshop, dan pelatihan digitalisasi pembelajaran. Sekolah menjalin kerja sama dengan IDUKA untuk meningkatkan kompetensi guru produktif melalui kegiatan magang guru. Tenaga kependidikan dilibatkan dalam pelatihan manajemen sekolah, literasi digital, dan layanan administrasi.
+            </p>
+
+            <h3>3.2 Kondisi Eksternal (Tren & Peluang)</h3>
+            <h4>3.2.1 Analisis Tren Industri & Kebutuhan Pasar Kerja (2025-2029)</h4>
+            <ul>
+                <li><strong>Sektor Ekonomi Unggulan Daerah:</strong> Potensi pertumbuhan di pariwisata, pertanian, perikanan, industri kreatif, manufaktur, dan perdagangan/jasa di Banyuwangi membuka peluang besar penyerapan lulusan SMK Gajah Mada Banyuwangi, khususnya pada konsentrasi keahlian yang relevan.</li>
+                <li><strong>Kebutuhan Keterampilan Industri:</strong> Peningkatan permintaan DUDI akan lulusan dengan keterampilan digital (misal: analisis data, IoT, AI dasar), soft skills (komunikasi, kolaborasi, problem-solving), dan adaptabilitas tinggi pada semua konsentrasi keahlian (Teknik Kendaraan Ringan, Teknik Audio Video, Teknik Sepeda Motor, Teknik Komputer dan Jaringan, Desain Komunikasi Visual, Akuntansi, dan Manajemen Perkantoran).</li>
+                <li><strong>Perkembangan Teknologi:</strong> Adopsi Industri 4.0 (otomatisasi, robotika sederhana, AR/VR) menuntut adaptasi kurikulum dan infrastruktur praktik untuk semua konsentrasi keahlian, khususnya di bidang otomotif, elektronika, TIK, dan desain.</li>
+                <li><strong>Dukungan Kebijakan Pemerintah:</strong> Program "Merdeka Belajar" dan "SMK Pusat Keunggulan" memberikan peluang dukungan bagi pengembangan pendidikan vokasi, termasuk fasilitasi kemitraan dan modernisasi sarana.</li>
+            </ul>
+
+            <!-- Bagian 3.2.2 Hasil Pemetaan Kompetensi Keahlian (Okupasi) di Industri Mitra telah dihapus -->
+
+            <h3>3.3 Identifikasi Isu Strategis / Tantangan Utama</h3>
+            <p>Berdasarkan analisis internal dan eksternal, isu-isu strategis dan tantangan utama SMK Gajah Mada Banyuwangi meliputi:</p>
+            <ul>
+                <li>Kesenjangan Kompetensi Lulusan: Adanya perbedaan antara keterampilan yang diajarkan dan kebutuhan spesifik industri di 7 konsentrasi keahlian.</li>
+                <li>Modernisasi Sarana & Prasarana: Keterbatasan anggaran untuk pengadaan, pemeliharaan, dan pembaruan peralatan praktik berbasis teknologi terbaru untuk setiap bengkel/laboratorium.</li>
+                <li>Pengembangan Profesionalisme Guru: Memastikan guru selalu up-to-date dengan perkembangan teknologi dan metodologi pembelajaran vokasi yang efektif di masing-masing bidang keahlian.</li>
+                <li>Optimalisasi Kemitraan DUDI: Mengubah kemitraan dari sekadar formalitas menjadi kolaborasi yang lebih mendalam dan saling menguntungkan (link & match).</li>
+                <li>Penguatan Karakter & Soft Skills: Integrasi pendidikan karakter dan soft skills yang lebih efektif di seluruh mata pelajaran dan kegiatan ekstrakurikuler.</li>
+                <li>Adaptasi Teknologi Cepat: Kesiapan sekolah dalam mengadopsi dan mengimplementasikan teknologi pendidikan dan industri baru.</li>
+            </ul>
+
+            <h4>3.3.3 Capaian Rapor Pendidikan dan Rekomendasi Perbaikan</h4>
+            <p>Analisis capaian Rapor Pendidikan mengidentifikasi beberapa area kritis yang menjadi isu strategis:</p>
+            <ul>
+                <li>Literasi (A.1): Peringkat menengah meskipun ada peningkatan. Rekomendasi: pengembangan kompetensi pendidik (sastra/informasional), perencanaan & implementasi pembelajaran responsif (PjBL), supervisi & refleksi, integrasi kebijakan.</li>
+                <li>Numerasi (A.2): Peringkat menengah (provinsi) & menengah atas (nasional). Rekomendasi: penguatan pembelajaran domain data & bilangan kontekstual, pengembangan strategi interaktif, peningkatan kompetensi pendidik (refleksi praktik, fasilitator), pengembangan kurikulum adaptif.</li>
+                <li>Indeks Karakter (A.3): Peringkat menengah. Rekomendasi: integrasi karakter dalam pembelajaran (RPP/Modul P5), pembiasaan & budaya sekolah (Jumat Karakter), penguatan metode PjBL, dukungan afektif & psikologis, pengembangan kompetensi pendidik.</li>
+                <li>Kualitas Pembelajaran (D.1): Penurunan signifikan 2,17% (terutama dukungan psikologis & metode pembelajaran). Rekomendasi: penyusunan kurikulum kontekstual, integrasi dukungan psikologis, peningkatan kompetensi guru (diferensiasi, PjBL/PBL), kolaborasi & komunitas belajar, Teaching Factory & DUDI.</li>
+                <li>Iklim Keamanan Sekolah (D.2): Penurunan 6,06% (terutama kesejahteraan psikologis, pemahaman guru tentang kekerasan seksual, hukuman fisik, substansi). Rekomendasi: penguatan kebijakan (disiplin positif, tim keamanan), peningkatan kompetensi guru, penguatan kematangan moral/emosional, peningkatan kesejahteraan psikologis, diskusi & refleksi, kolaborasi eksternal.</li>
+                <li>Iklim Kebinekaan (D.8): Penurunan 5,36%. Rekomendasi: penguatan P5 (Bhinneka Tunggal Ika), penciptaan lingkungan aman & inklusif, pengembangan kemitraan orang tua/wali.</li>
+                <li>Link and Match dengan Dunia Kerja (D.17): Penurunan signifikan 3,15% (dari 69,15% menjadi 66%). Rekomendasi: sinkronisasi total kurikulum melalui TeFa & PjBL, pemberdayaan murid dalam perencanaan/evaluasi, penguatan ekosistem kemitraan industri (magang guru/siswa, guru tamu, revitalisasi BKK, Komite Sekolah).</li>
+            </ul>
+        </div>
+
+        <!-- HALAMAN BAB IV -->
+        <div id="bab4" class="page">
+            <h1>BAB IV</h1>
+            <h2>STRATEGI DAN PROGRAM</h2>
+
+            <h3>4.1 Arah Kebijakan Umum</h3>
+            <p>Dalam kurun waktu 2025-2029, SMK Gajah Mada Banyuwangi akan fokus pada pengembangan pendidikan vokasi berbasis "link and match" yang holistik, inovatif, dan akuntabel. Pendekatan ini akan melibatkan kolaborasi erat dengan DUDI, pemanfaatan teknologi, serta penguatan karakter dan kompetensi abad ke-21. Strategi ini dikelompokkan ke dalam lima pilar utama.</p>
+
+            <h3>4.2 Strategi Pengembangan per Pilar</h3>
+            <h4>Pilar 1: Kurikulum & Pembelajaran Adaptif</h4>
+            <ul>
+                <li><strong>Strategi:</strong> Melakukan transformasi kurikulum dan metodologi pembelajaran yang responsif terhadap kebutuhan industri dan mengintegrasikan keterampilan masa depan di semua konsentrasi keahlian.</li>
+                <li><strong>Program Strategis:</strong>
+                    <ul>
+                        <li>Pengembangan dan validasi kurikulum berbasis DUDI dan standar kompetensi nasional/internasional untuk setiap konsentrasi keahlian <strong>(Teknik Kendaraan Ringan, Teknik Audio Video, Teknik Sepeda Motor, Teknik Komputer dan Jaringan, Desain Komunikasi Visual, Akuntansi, Manajemen Perkantoran)</strong>.</li>
+                        <li>Implementasi model pembelajaran Teaching Factory, Project-Based Learning, dan praktik berbasis industri secara menyeluruh.</li>
+                        <li>Integrasi literasi digital, computational thinking, dan soft skills (4C) ke dalam seluruh mata pelajaran dan kegiatan ekstrakurikuler.</li>
+                        <li>Pengembangan modul ajar digital dan sumber belajar inovatif.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Pilar 2: Sumber Daya Manusia Unggul (Guru & Tendik)</h4>
+            <ul>
+                <li><strong>Strategi:</strong> Meningkatkan kompetensi profesional dan pedagogis guru serta tenaga kependidikan secara berkelanjutan sesuai standar industri dan kebutuhan sekolah.</li>
+                <li><strong>Program Strategis:</strong>
+                    <ul>
+                        <li>Pelatihan dan sertifikasi kompetensi industri bagi guru produktif di semua konsentrasi keahlian (misalnya sertifikasi montir, teknisi jaringan, akuntan).</li>
+                        <li>Program magang guru di industri terkait untuk pembaruan wawasan dan praktik.</li>
+                        <li>Peningkatan kapasitas kepala sekolah dalam kepemimpinan instruksional dan manajemen inovasi.</li>
+                        <li>Pengembangan komunitas belajar profesional (Professional Learning Community) guru.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Pilar 3: Optimalisasi Sarana Prasarana & Teknologi</h4>
+            <ul>
+                <li><strong>Strategi:</strong> Menyediakan dan mengelola sarana prasarana pembelajaran berbasis teknologi modern yang mendukung pembelajaran praktik industri dan Teaching Factory.</li>
+                <li><strong>Program Strategis:</strong>
+                    <ul>
+                        <li>Modernisasi laboratorium dan bengkel praktik sesuai standar industri 4.0 di setiap konsentrasi keahlian.</li>
+                        <li>Pengembangan fasilitas Teaching Factory yang menghasilkan produk/jasa riil (misalnya, produksi di PT. Teaching Factory Solusindo).</li>
+                        <li>Penyediaan infrastruktur jaringan dan kelas digital yang memadai untuk mendukung pembelajaran daring/blended.</li>
+                        <li>Pemanfaatan Learning Management System (LMS) dan aplikasi pembelajaran digital secara optimal.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Pilar 4: Kemitraan DUDI yang Solid</h4>
+            <ul>
+                <li><strong>Strategi:</strong> Membangun dan memperkuat kemitraan strategis yang komprehensif dengan DUDI untuk peningkatan kualitas lulusan dan pengembangan sekolah.</li>
+                <li><strong>Program Strategis:</strong>
+                    <ul>
+                        <li>Peningkatan kerja sama co-creation kurikulum, co-delivery pembelajaran, dan co-financing sarpras dengan DUDI, termasuk model MoU 8+i dengan PT. Teaching Factory Solusindo.</li>
+                        <li>Optimalisasi program magang dan penyerapan lulusan melalui bursa kerja khusus dan tracer study yang efektif.</li>
+                        <li>Pengembangan program inkubasi kewirausahaan siswa dengan melibatkan mentor DUDI.</li>
+                        <li>Penjajakan kemitraan dengan DUDI skala nasional dan internasional.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>Pilar 5: Tata Kelola & Lingkungan Sekolah Kondusif</h4>
+            <ul>
+                <li><strong>Strategi:</strong> Menerapkan tata kelola sekolah yang transparan, akuntabel, dan adaptif, serta menciptakan lingkungan belajar yang inspiratif.</li>
+                <li><strong>Program Strategis:</strong>
+                    <ul>
+                        <li>Pengembangan dan implementasi Sistem Informasi Manajemen Sekolah (SIMS) terintegrasi berbasis data.</li>
+                        <li>Penguatan budaya mutu dan akuntabilitas dalam pengelolaan anggaran dan sumber daya.</li>
+                        <li>Penciptaan lingkungan sekolah yang aman, nyaman, inklusif, dan inspiratif untuk menumbuhkan kreativitas dan inovasi, sesuai rekomendasi Rapor Pendidikan terkait Iklim Keamanan dan Kebinekaan.</li>
+                        <li>Peningkatan partisipasi aktif orang tua dan masyarakat melalui Komite Sekolah.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HALAMAN BAB V -->
+        <div id="bab5" class="page">
+            <h1>BAB V</h1>
+            <h2>INDIKATOR KINERJA UTAMA (IKU) DAN TARGET</h2>
+
+            <h3>5.1 Indikator Kinerja Utama (IKU)</h3>
+            <p>IKU adalah ukuran keberhasilan pencapaian tujuan strategis SMK Gajah Mada Banyuwangi. IKU ini selaras dengan Road Map operasional.</p>
+            <ul>
+                <li><strong>IKU 1: Persentase Lulusan yang Bekerja/Wirausaha/Melanjutkan:</strong> Mengukur keberhasilan lulusan dalam memasuki dunia kerja, berwirausaha, atau melanjutkan pendidikan tinggi.</li>
+                <li><strong>IKU 2: Tingkat Kepuasan DUDI terhadap Kompetensi Lulusan:</strong> Mengukur persepsi DUDI terhadap kualitas dan relevansi kompetensi lulusan.</li>
+                <li><strong>IKU 3: Persentase Guru Bersertifikasi Kompetensi Industri:</strong> Mengukur kualitas dan relevansi kompetensi profesional guru.</li>
+                <li><strong>IKU 4: Relevansi Kurikulum dengan Standar DUDI:</strong> Mengukur tingkat kesesuaian kurikulum dengan kebutuhan dan standar industri.</li>
+                <li><strong>IKU 5: Optimalisasi Penggunaan Sarpras Teknologi:</strong> Mengukur pemanfaatan fasilitas dan teknologi modern dalam pembelajaran praktik.</li>
+                <li><strong>IKU 6: Angka Partisipasi DUDI dalam Program Sekolah:</strong> Mengukur tingkat keterlibatan aktif DUDI dalam program-program sekolah.</li>
+                <li><strong>IKU 7: Tingkat Kemandirian dan Kewirausahaan Lulusan:</strong> Mengukur kemampuan lulusan untuk berinisiatif dan menciptakan peluang usaha.</li>
+            </ul>
+
+            <h3>5.2 Target Capaian IKU (2025-2029)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IKU</th>
+                        <th>Satuan</th>
+                        <th>Target 2025</th>
+                        <th>Target 2026</th>
+                        <th>Target 2027</th>
+                        <th>Target 2028</th>
+                        <th>Target 2029</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lulusan Bekerja/Wirausaha/Melanjutkan</td>
+                        <td>%</td>
+                        <td>75%</td>
+                        <td>80%</td>
+                        <td>85%</td>
+                        <td>90%</td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <td>Kepuasan DUDI</td>
+                        <td>Indeks (1-5)</td>
+                        <td>>3.5</td>
+                        <td>>3.8</td>
+                        <td>>4.0</td>
+                        <td>>4.3</td>
+                        <td>>4.5</td>
+                    </tr>
+                    <tr>
+                        <td>Guru Bersertifikasi Industri</td>
+                        <td>%</td>
+                        <td>50%</td>
+                        <td>75%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Relevansi Kurikulum DUDI</td>
+                        <td>%</td>
+                        <td>>70%</td>
+                        <td>>75%</td>
+                        <td>>80%</td>
+                        <td>>85%</td>
+                        <td>>90%</td>
+                    </tr>
+                    <tr>
+                        <td>Optimalisasi Sarpras Teknologi</td>
+                        <td>% jam praktik</td>
+                        <td>>60%</td>
+                        <td>>70%</td>
+                        <td>>75%</td>
+                        <td>>80%</td>
+                        <td>>85%</td>
+                    </tr>
+                    <tr>
+                        <td>Partisipasi DUDI (per proli)</td>
+                        <td>Jumlah DUDI</td>
+                        <td>Min. 3</td>
+                        <td>Min. 3-4</td>
+                        <td>Min. 4</td>
+                        <td>Min. 4-5</td>
+                        <td>Min. 5</td>
+                    </tr>
+                    <tr>
+                        <td>Kemandirian & Kewirausahaan Lulusan</td>
+                        <td>%</td>
+                        <td>10%</td>
+                        <td>12%</td>
+                        <td>15%</td>
+                        <td>18%</td>
+                        <td>20%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><em>*Target partisipasi DUDI adalah jumlah DUDI aktif per program keahlian.</em></p>
+
+            <h3>5.3 Mekanisme Monitoring & Evaluasi</h3>
+            <p>Implementasi Renstra akan dimonitor dan dievaluasi secara berkala melalui:</p>
+            <ul>
+                <li>Rapat Tinjauan Manajemen (Quarterly): Evaluasi progres IKU, identifikasi kendala, dan penyesuaian strategi. Hasil tinjauan didokumentasikan.</li>
+                <li>Survei Kepuasan Berkelanjutan: Rutin dilakukan kepada DUDI, alumni, siswa, dan orang tua (tahunan). Data survei dianalisis dan menjadi masukan perbaikan.</li>
+                <li>Audit Internal & Eksternal: Peninjauan oleh tim independen (internal) dan pihak DUDI/lembaga akreditasi (setiap 2 tahun).</li>
+                <li>Benchmarking: Perbandingan kinerja dengan SMK unggulan lain atau standar industri terbaik untuk identifikasi area perbaikan dan pengembangan inovasi. Dilakukan setiap tahun.</li>
+                <li>Sistem Informasi Data Terintegrasi: Mengembangkan dan menggunakan platform digital untuk pengumpulan, analisis, dan visualisasi data IKU secara real-time, memudahkan monitoring dan pengambilan keputusan.</li>
+            </ul>
+        </div>
+
+        <!-- HALAMAN BAB VI -->
+        <div id="bab6" class="page">
+            <h1>BAB VI</h1>
+            <h2>PENUTUP</h2>
+
+            <h3>6.1 Kesimpulan</h3>
+            <p>Rencana Strategis SMK Gajah Mada Banyuwangi 2025-2029 ini merupakan komitmen seluruh warga sekolah dan pemangku kepentingan untuk mencapai keunggulan dalam pendidikan vokasi. Dengan fokus pada kurikulum adaptif, SDM unggul, sarpras berteknologi, kemitraan DUDI yang solid, dan tata kelola akuntabel, diharapkan SMK Gajah Mada Banyuwangi mampu mencetak lulusan yang tidak hanya siap kerja, tetapi juga inovatif, berkarakter kuat, dan berdaya saing global.</p>
+            <p>Renstra ini menjadi panduan utama, yang kemudian akan dijabarkan lebih lanjut dalam Road Map operasional dan rencana aksi tahunan, untuk memastikan setiap langkah strategis terimplementasi dengan baik.</p>
+
+            <h3>6.2 Harapan</h3>
+            <p>Melalui implementasi Renstra ini, SMK Gajah Mada Banyuwangi berharap:</p>
+            <ul>
+                <li>Menjadi institusi pendidikan vokasi rujukan di tingkat regional dan nasional.</li>
+                <li>Memberikan kontribusi signifikan terhadap pembangunan SDM berkualitas di Kabupaten Banyuwangi dan Indonesia.</li>
+                <li>Menghasilkan lulusan yang menjadi agen perubahan di dunia kerja dan masyarakat.</li>
+                <li>Menciptakan ekosistem pendidikan vokasi yang berkelanjutan dan berdaya saing tinggi.</li>
+            </ul>
+
+            <h3>6.3 Prinsip Keberlanjutan dan Manajemen Risiko</h3>
+            <p>Keberlanjutan Renstra ini akan didukung oleh:</p>
+            <ul>
+                <li>Kemitraan Strategis Jangka Panjang: Dengan DUDI dan pemangku kepentingan lain.</li>
+                <li>Inovasi Berkelanjutan: Adaptasi proaktif terhadap teknologi dan metode pembelajaran.</li>
+                <li>Pengembangan Kapasitas Internal: Peningkatan kemampuan SDM sekolah secara mandiri.</li>
+                <li>Fleksibilitas & Adaptabilitas: Kesediaan untuk menyesuaikan strategi sesuai perubahan lingkungan.</li>
+                <li>Pendanaan Beragam:** Mencari sumber pendanaan dari berbagai pihak.</li>
+            </ul>
+            <p>Potensi risiko (perubahan kebijakan, keterbatasan anggaran, resistensi internal, perkembangan teknologi, dll.) akan diidentifikasi dan dikelola melalui strategi mitigasi yang proaktif, memastikan implementasi Renstra tetap pada jalurnya.</p>
+        </div>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const pages = document.querySelectorAll('.page');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Nonaktifkan semua tab dan halaman
+                    tabs.forEach(t => t.classList.remove('active'));
+                    pages.forEach(p => p.classList.remove('active'));
+
+                    // Aktifkan tab yang diklik dan halaman yang sesuai
+                    tab.classList.add('active');
+                    const targetPage = document.getElementById(tab.dataset.target);
+                    if (targetPage) {
+                        targetPage.classList.add('active');
+                    }
+                });
+            });
+
+            // Set default active tab and page on load
+            if (tabs.length > 0 && pages.length > 0) {
+                tabs[0].classList.add('active');
+                pages[0].classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
